@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Events &amp; Catering — Savor Bistro</title>
+  <meta name="description" content="Host your private dinner, corporate event, wedding or catered celebration at Savor Bistro. Our private room seats up to 24 guests." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    { 50: "#FFF8EC", 100: "#FBEED8", 200: "#F4E1C3" },
+            tomato:   { 600: "#E8384F", 700: "#C42A40", 100: "#FDE3E6" },
+            citrus:   { 500: "#FFB627", 600: "#E9A012", 100: "#FFF0D2" },
+            basil:    { 700: "#2D5A3D", 100: "#E2EFE6" },
+            charcoal: { 900: "#221A17" },
+            ink:      { 900: "#2A211D" }
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', "Trebuchet MS", "sans-serif"],
+            body: ['"Work Sans"', "Segoe UI", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream-50 text-ink-900 font-body">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header data-header class="site-header fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between" style="height: var(--nav-h);">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Savor Bistro home">
+          <span class="grid place-items-center w-10 h-10 rounded-full bg-tomato-600 text-white font-display font-extrabold text-xl" aria-hidden="true">S</span>
+          <span class="logo-text font-display font-bold text-xl tracking-tight">Savor<span class="text-tomato-600">Bistro</span></span>
+        </a>
+        <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="menu.html" class="nav-link">Menu</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="private-events.html" class="nav-link" aria-current="page">Private Events</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="contact.html#reserve" class="btn btn-primary btn-sm hidden sm:inline-flex">Reserve a Table</a>
+          <button data-panel-open class="md:hidden grid place-items-center w-11 h-11 rounded-full border-2 border-charcoal-900/20" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div data-scrim class="mobile-scrim" aria-hidden="true"></div>
+  <aside data-panel id="mobile-panel" class="mobile-panel md:hidden" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="flex items-center justify-between mb-6">
+      <span class="font-display font-bold text-xl">Savor<span class="text-tomato-600">Bistro</span></span>
+      <button data-panel-close class="grid place-items-center w-11 h-11 rounded-full border-2 border-white/30" aria-label="Close menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col" aria-label="Mobile">
+      <a href="index.html" class="mobile-link">Home <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="menu.html" class="mobile-link">Menu <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="about.html" class="mobile-link">About <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="gallery.html" class="mobile-link">Gallery <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="private-events.html" class="mobile-link" aria-current="page">Private Events <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="contact.html" class="mobile-link">Contact <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+    </nav>
+    <a href="contact.html#reserve" class="btn btn-primary mt-8">Reserve a Table</a>
+    <p class="mt-6 text-sm text-white/70">418 Meridian Ave, Portside<br /><a href="tel:+15551234567" class="underline">(555) 123-4567</a></p>
+  </aside>
+  <main id="main">
+    <!-- PAGE INTRO -->
+    <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-32 pb-10">
+      <p class="kicker text-tomato-600 mb-3">Private Events &amp; Catering</p>
+      <h1 class="section-title text-charcoal-900">Your table, your way</h1>
+      <p class="mt-4 text-lg text-ink-900/80 measure">
+        From milestone birthdays to board dinners to the rehearsal meal the family
+        still talks about - our team has hosted it. One room, one menu, one point of
+        contact from first call to last pour.
+      </p>
+    </section>
+
+    <!-- PRIVATE DINING: capacity details + room photos -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16" aria-labelledby="pdr-title">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div>
+          <h2 id="pdr-title" class="section-title text-charcoal-900">The Meridian Room</h2>
+          <p class="mt-4 text-ink-900/80 measure">
+            Our private dining room sits just off the main dining room with its own
+            entrance, AV screen, and dedicated service team. It seats up to 24 guests
+            at one long table, or up to 18 for a standing reception.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm">
+            <li class="flex items-center gap-3"><i data-lucide="users" class="w-5 h-5 text-tomato-600"></i>Seats up to 24 guests (18 standing reception)</li>
+            <li class="flex items-center gap-3"><i data-lucide="calendar-check" class="w-5 h-5 text-tomato-600"></i>Lunch and dinner, Monday through Saturday</li>
+            <li class="flex items-center gap-3"><i data-lucide="screen-share" class="w-5 h-5 text-tomato-600"></i>4K screen and HDMI for presentations</li>
+            <li class="flex items-center gap-3"><i data-lucide="wine" class="w-5 h-5 text-tomato-600"></i>Beverage pairings and full bar packages</li>
+          </ul>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <figure class="group media rounded-2xl aspect-[4/5] shadow-lift">
+            <img src="images/events-private-room.jpg" alt="The Meridian Room set for a private dinner" loading="lazy" />
+          </figure>
+          <figure class="group media rounded-2xl aspect-[4/5] shadow-lift mt-8">
+            <img src="images/events-long-table.jpg" alt="Long banquet table styled for a celebration" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+      <figure class="group media rounded-3xl aspect-[21/9] shadow-lift mt-8">
+        <img src="images/events-place-setting.jpg" alt="Close-up of a styled place setting with linen and glassware" loading="lazy" />
+      </figure>
+    </section>
+    <!-- CATERING PACKAGES -->
+    <section class="bg-charcoal-900 text-cream-50 py-20" aria-labelledby="catering-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 id="catering-title" class="section-title">Off-site catering</h2>
+        <p class="mt-3 text-cream-50/80 measure">We bring the kitchen to you - within 40 miles of the bistro. Three formats, endlessly tweakable.</p>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <div class="card bg-white text-ink-900 p-6 flex flex-col">
+            <h3 class="card-title text-charcoal-900">The Spread</h3>
+            <p class="mt-1 font-semibold text-citrus-600">From $38 per person</p>
+            <p class="mt-3 text-sm text-ink-900/75 flex-1">Family-style platters of our starters, mains and sides, delivered and set out. Great for office lunches and casual showers.</p>
+            <p class="mt-4 text-xs text-ink-900/60">Serves 10-40 · 48 hours notice</p>
+          </div>
+          <div class="card bg-white text-ink-900 p-6 flex flex-col">
+            <h3 class="card-title text-charcoal-900">The Feast</h3>
+            <p class="mt-1 font-semibold text-citrus-600">From $72 per person</p>
+            <p class="mt-3 text-sm text-ink-900/75 flex-1">A full three-course dinner with two chefs on site, plated or family-style, plus a bar station with one of our bartenders.</p>
+            <p class="mt-4 text-xs text-ink-900/60">Serves 20-80 · 2 weeks notice</p>
+          </div>
+          <div class="card bg-white text-ink-900 p-6 flex flex-col">
+            <h3 class="card-title text-charcoal-900">The Whole Hog</h3>
+            <p class="mt-1 font-semibold text-citrus-600">Custom quote</p>
+            <p class="mt-3 text-sm text-ink-900/75 flex-1">Weddings and full-day celebrations: custom menu design, rentals coordination, staffing, and a tasting for eight included.</p>
+            <p class="mt-4 text-xs text-ink-900/60">Serves 40-200 · 8 weeks notice</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- INQUIRY FORM -->
+    <section class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20" aria-labelledby="inquiry-title">
+      <h2 id="inquiry-title" class="section-title text-charcoal-900">Tell us about your event</h2>
+      <p class="mt-3 text-ink-900/80 measure">Send the details and our events lead replies within one business day.</p>
+
+      <!-- FORM: client-side validation via js/main.js; success shows a styled confirmation with a drawn checkmark -->
+      <form data-validate class="mt-8" novalidate>
+        <div class="form-fields space-y-5">
+          <div data-field>
+            <label for="ev-name" class="field-label">Full name <span class="text-tomato-600" aria-hidden="true">*</span></label>
+            <input class="field" id="ev-name" name="name" type="text" autocomplete="name" required data-error="Please tell us your name." />
+            <p class="field-error"><i data-lucide="alert-circle" aria-hidden="true"></i><span></span></p>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div data-field>
+              <label for="ev-email" class="field-label">Email <span class="text-tomato-600" aria-hidden="true">*</span></label>
+              <input class="field" id="ev-email" name="email" type="email" autocomplete="email" required data-error="Please enter a valid email address." />
+              <p class="field-error"><i data-lucide="alert-circle" aria-hidden="true"></i><span></span></p>
+            </div>
+            <div data-field>
+              <label for="ev-phone" class="field-label">Phone <span class="text-tomato-600" aria-hidden="true">*</span></label>
+              <input class="field" id="ev-phone" name="phone" type="tel" autocomplete="tel" required data-error="Please enter a phone number we can reach you at." />
+              <p class="field-error"><i data-lucide="alert-circle" aria-hidden="true"></i><span></span></p>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div data-field>
+              <label for="ev-type" class="field-label">Event type <span class="text-tomato-600" aria-hidden="true">*</span></label>
+              <select class="field" id="ev-type" name="eventType" required data-error="Please choose an event type.">
+                <option value="">Select an option</option>
+                <option>Private Dinner</option>
+                <option>Corporate Event</option>
+                <option>Wedding</option>
+                <option>Catering</option>
+              </select>
+              <p class="field-error"><i data-lucide="alert-circle" aria-hidden="true"></i><span></span></p>
+            </div>
+            <div data-field>
+              <label for="ev-guests" class="field-label">Estimated guest count <span class="text-tomato-600" aria-hidden="true">*</span></label>
+              <input class="field" id="ev-guests" name="guests" type="number" min="6" max="200" required data-error="How many guests are you expecting?" />
+              <p class="field-error"><i data-lucide="alert-circle" aria-hidden="true"></i><span></span></p>
+            </div>
+          </div>
+          <div data-field>
+            <label for="ev-date" class="field-label">Preferred date <span class="text-tomato-600" aria-hidden="true">*</span></label>
+            <input class="field" id="ev-date" name="date" type="date" required data-error="Please pick a preferred date." />
+            <p class="field-error"><i data-lucide="alert-circle" aria-hidden="true"></i><span></span></p>
+          </div>
+          <div data-field>
+            <label for="ev-message" class="field-label">Message</label>
+            <textarea class="field" id="ev-message" name="message" rows="4" placeholder="Anything else we should know - dietary needs, room style, timing"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-full sm:w-auto">Send Inquiry</button>
+        </div>
+
+        <!-- SUCCESS CONFIRMATION (hidden until valid submit) -->
+        <div class="form-status" role="status">
+          <div class="rounded-3xl bg-basil-100 border border-basil-700/30 p-8 text-center">
+            <svg class="check-draw mx-auto text-basil-700" width="72" height="72" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+              <circle cx="26" cy="26" r="24" stroke="currentColor" stroke-width="3" />
+              <path d="M15 27l8 8 15-17" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <h3 data-success-heading class="mt-5 card-title text-basil-700">Inquiry received</h3>
+            <p class="mt-2 text-ink-900/80 measure mx-auto">Thanks - our events lead will reply within one business day. For anything urgent, call <a class="underline" href="tel:+15551234567">(555) 123-4567</a>.</p>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- EVENTS PHOTO STRIP -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24" aria-label="Event photography">
+      <figure class="group media rounded-3xl aspect-[21/9] shadow-lift">
+        <img src="images/events-canapes.jpg" alt="Tray of passed canapes at a cocktail reception" loading="lazy" />
+      </figure>
+    </section>
+  </main>
+
+  <footer class="bg-charcoal-900 text-cream-50/85">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="font-display font-bold text-2xl text-white">Savor<span class="text-tomato-600">Bistro</span></p>
+        <p class="mt-3 text-sm">Seasonal cooking in a bright, easy room. Everyone is welcome at our table.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="https://instagram.com" class="grid place-items-center w-10 h-10 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="https://facebook.com" class="grid place-items-center w-10 h-10 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-white">Visit</h3>
+        <address class="mt-3 text-sm not-italic">
+          418 Meridian Ave<br />Portside, CA 90210<br />
+          <a class="mt-2 inline-flex items-center gap-1 underline hover:text-citrus-500" href="https://maps.google.com/?q=418+Meridian+Ave+Portside+CA" target="_blank" rel="noopener"><i data-lucide="map-pin" class="w-4 h-4"></i>Open in Google Maps</a><br />
+          <a class="mt-1 inline-flex items-center gap-1 underline hover:text-citrus-500" href="tel:+15551234567"><i data-lucide="phone" class="w-4 h-4"></i>(555) 123-4567</a>
+        </address>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-white">Hours</h3>
+        <dl class="mt-3 text-sm space-y-1">
+          <div class="flex justify-between gap-4"><dt>Mon-Thu</dt><dd>11:30-22:00</dd></div>
+          <div class="flex justify-between gap-4"><dt>Fri-Sat</dt><dd>11:30-23:00</dd></div>
+          <div class="flex justify-between gap-4"><dt>Sun</dt><dd>10:00-21:00</dd></div>
+        </dl>
+        <p class="mt-2 text-xs text-cream-50/60">Kitchen closes 30 min before closing. Closed Dec 25.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h3 class="font-display font-semibold text-white">Explore</h3>
+        <ul class="mt-3 text-sm space-y-2">
+          <li><a class="hover:text-citrus-500" href="menu.html">Menu</a></li>
+          <li><a class="hover:text-citrus-500" href="about.html">Our Story</a></li>
+          <li><a class="hover:text-citrus-500" href="gallery.html">Gallery</a></li>
+          <li><a class="hover:text-citrus-500" href="private-events.html">Private Events</a></li>
+          <li><a class="hover:text-citrus-500" href="contact.html">Reservations</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-xs text-cream-50/50">
+      © <span data-year>2026</span> Savor Bistro. A fictional restaurant built for a portfolio demo.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

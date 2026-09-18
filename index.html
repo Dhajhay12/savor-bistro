@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savor Bistro — Fresh Flavors. Unforgettable Experiences.</title>
+  <meta name="description" content="Savor Bistro serves vivid, seasonal cooking in a bright modern dining room. Explore the menu, meet the team, and reserve a table." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Tailwind theme extension — keep these values in sync with css/styles.css tokens */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    { 50: "#FFF8EC", 100: "#FBEED8", 200: "#F4E1C3" },
+            tomato:   { 600: "#E8384F", 700: "#C42A40", 100: "#FDE3E6" },
+            citrus:   { 500: "#FFB627", 600: "#E9A012", 100: "#FFF0D2" },
+            basil:    { 700: "#2D5A3D", 100: "#E2EFE6" },
+            charcoal: { 900: "#221A17" },
+            ink:      { 900: "#2A211D" }
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', "Trebuchet MS", "sans-serif"],
+            body: ['"Work Sans"', "Segoe UI", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream-50 text-ink-900 font-body">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= HEADER (shared across all pages) ================== -->
+  <header data-header class="site-header fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between" style="height: var(--nav-h);">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Savor Bistro home">
+          <span class="grid place-items-center w-10 h-10 rounded-full bg-tomato-600 text-white font-display font-extrabold text-xl" aria-hidden="true">S</span>
+          <span class="logo-text font-display font-bold text-xl tracking-tight">Savor<span class="text-tomato-600">Bistro</span></span>
+        </a>
+        <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
+          <a href="index.html" class="nav-link" aria-current="page">Home</a>
+          <a href="menu.html" class="nav-link">Menu</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="private-events.html" class="nav-link">Private Events</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="contact.html#reserve" class="btn btn-primary btn-sm hidden sm:inline-flex">Reserve a Table</a>
+          <button data-panel-open class="md:hidden grid place-items-center w-11 h-11 rounded-full border-2 border-charcoal-900/20" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile slide-in panel -->
+  <div data-scrim class="mobile-scrim" aria-hidden="true"></div>
+  <aside data-panel id="mobile-panel" class="mobile-panel md:hidden" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="flex items-center justify-between mb-6">
+      <span class="font-display font-bold text-xl">Savor<span class="text-tomato-600">Bistro</span></span>
+      <button data-panel-close class="grid place-items-center w-11 h-11 rounded-full border-2 border-white/30" aria-label="Close menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col" aria-label="Mobile">
+      <a href="index.html" class="mobile-link" aria-current="page">Home <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="menu.html" class="mobile-link">Menu <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="about.html" class="mobile-link">About <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="gallery.html" class="mobile-link">Gallery <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="private-events.html" class="mobile-link">Private Events <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="contact.html" class="mobile-link">Contact <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+    </nav>
+    <a href="contact.html#reserve" class="btn btn-primary mt-8">Reserve a Table</a>
+    <p class="mt-6 text-sm text-white/70">418 Meridian Ave, Portside<br /><a href="tel:+15551234567" class="underline">(555) 123-4567</a></p>
+  </aside>
+
+  <main id="main">
+    <!-- HERO: Ken-Burns photo + CSS steam, bright cream scrim bottom-left -->
+    <section class="relative min-h-[92svh] flex items-end overflow-hidden" aria-label="Welcome">
+      <div class="absolute inset-0" aria-hidden="true">
+        <img src="images/hero-signature-dish.jpg" alt="" class="ken-burns w-full h-full object-cover" />
+        <div class="absolute inset-0 hero-scrim"></div>
+      </div>
+      <div class="steam-field" aria-hidden="true">
+        <span class="steam-wisp"></span><span class="steam-wisp"></span><span class="steam-wisp"></span>
+        <span class="steam-wisp"></span><span class="steam-wisp"></span>
+      </div>
+      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full pb-16 pt-32">
+        <div class="max-w-2xl">
+          <p class="kicker text-tomato-600 mb-3">Portside, CA - Open daily</p>
+          <h1 class="hero-title text-charcoal-900">Fresh Flavors. Unforgettable Experiences.</h1>
+          <p class="mt-5 text-lg text-ink-900/85 measure-tight">
+            Seasonal cooking, a bright dining room, and a wine list built for lingering.
+            Everything on the plate starts with growers we know by name.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="menu.html" class="btn btn-primary">View Menu</a>
+            <a href="contact.html#reserve" class="btn btn-ghost">Reserve a Table</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FEATURED DISHES: alternating image/text rows -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28" aria-labelledby="featured-title">
+      <h2 id="featured-title" class="section-title text-charcoal-900">Featured Dishes</h2>
+      <p class="mt-3 text-lg text-ink-900/80 measure">Four plates that tell you exactly who we are. Ask our servers what the kitchen is celebrating tonight.</p>
+      <div class="mt-14 space-y-16 lg:space-y-24">
+        <article class="group grid md:grid-cols-2 gap-8 lg:gap-14 items-center">
+          <a href="menu.html" class="media rounded-3xl aspect-[4/3] block shadow-lift">
+            <img src="images/dish-porchetta.jpg" alt="Herb-crusted porchetta sliced on a plate" loading="lazy" />
+          </a>
+          <div>
+            <div class="flex items-baseline justify-between gap-4">
+              <h3 class="card-title text-charcoal-900">Slow-Roast Porchetta</h3>
+              <span class="price price-lg">$34</span>
+            </div>
+            <p class="mt-3 text-ink-900/80">Twelve hours with fennel, rosemary and garlic, carved over charred broccolini and a bright salsa verde.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+            </div>
+          </div>
+        </article>
+        <article class="group grid md:grid-cols-2 gap-8 lg:gap-14 items-center md:[&>*:first-child]:order-2">
+          <a href="menu.html" class="media rounded-3xl aspect-[4/3] block shadow-lift">
+            <img src="images/dish-saffron-risotto.jpg" alt="Golden saffron risotto in a shallow bowl" loading="lazy" />
+          </a>
+          <div>
+            <div class="flex items-baseline justify-between gap-4">
+              <h3 class="card-title text-charcoal-900">Saffron Risotto</h3>
+              <span class="price price-lg">$26</span>
+            </div>
+            <p class="mt-3 text-ink-900/80">Carnaroli rice stirred to order with saffron from Abruzzo, preserved lemon, and a snowfall of pecorino.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+              <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+              <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+            </div>
+          </div>
+        </article>
+        <article class="group grid md:grid-cols-2 gap-8 lg:gap-14 items-center">
+          <a href="menu.html" class="media rounded-3xl aspect-[4/3] block shadow-lift">
+            <img src="images/dish-charred-octopus.jpg" alt="Charred octopus with smoked paprika oil" loading="lazy" />
+          </a>
+          <div>
+            <div class="flex items-baseline justify-between gap-4">
+              <h3 class="card-title text-charcoal-900">Charred Octopus</h3>
+              <span class="price price-lg">$29</span>
+            </div>
+            <p class="mt-3 text-ink-900/80">Grilled over vine cuttings, dressed with smoked paprika oil, fingerling potatoes and pickled fresno chilies.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+              <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+            </div>
+          </div>
+        </article>
+        <article class="group grid md:grid-cols-2 gap-8 lg:gap-14 items-center md:[&>*:first-child]:order-2">
+          <a href="menu.html" class="media rounded-3xl aspect-[4/3] block shadow-lift">
+            <img src="images/dish-burrata.jpg" alt="Burrata with heirloom tomatoes and basil" loading="lazy" />
+          </a>
+          <div>
+            <div class="flex items-baseline justify-between gap-4">
+              <h3 class="card-title text-charcoal-900">Heirloom Burrata</h3>
+              <span class="price price-lg">$18</span>
+            </div>
+            <p class="mt-3 text-ink-900/80">Creamy burrata over peak-season heirloom tomatoes, torn basil, saba and flaked sea salt.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+              <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LIVE REVIEW STREAM -->
+    <!-- PRODUCTION NOTE: static styled mockup. A real build would wire the
+         Google Places API / Yelp Fusion API, or a hosted widget service such
+         as EmbedSocial or Elfsight, into this same card layout. -->
+    <section class="bg-charcoal-900 text-cream-50 py-20 lg:py-28" aria-labelledby="reviews-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3">
+          <span class="live-dot inline-block w-2.5 h-2.5 rounded-full bg-tomato-600" aria-hidden="true"></span>
+          <h2 id="reviews-title" class="section-title">What guests are saying</h2>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <figure class="card bg-white text-ink-900 p-6 flex flex-col">
+            <div class="flex gap-1 text-citrus-500" aria-label="Rated 5 out of 5 stars">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <blockquote class="mt-4 flex-1">"The saffron risotto is the best thing I have eaten all year. Service made us feel like regulars on visit one."</blockquote>
+            <figcaption class="mt-5 text-sm font-semibold">Maya R. <span class="block font-normal text-ink-900/60">via Google Reviews</span></figcaption>
+          </figure>
+          <figure class="card bg-white text-ink-900 p-6 flex flex-col">
+            <div class="flex gap-1 text-citrus-500" aria-label="Rated 5 out of 5 stars">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <blockquote class="mt-4 flex-1">"Bright room, brighter food. The octopus alone is worth crossing town for."</blockquote>
+            <figcaption class="mt-5 text-sm font-semibold">Daniel K. <span class="block font-normal text-ink-900/60">via Yelp</span></figcaption>
+          </figure>
+          <figure class="card bg-white text-ink-900 p-6 flex flex-col">
+            <div class="flex gap-1 text-citrus-500" aria-label="Rated 4 out of 5 stars">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 opacity-30"></i>
+            </div>
+            <blockquote class="mt-4 flex-1">"Booked the patio for my parents' anniversary - staff remembered their names all night. Class act."</blockquote>
+            <figcaption class="mt-5 text-sm font-semibold">Priya S. <span class="block font-normal text-ink-900/60">via Google Reviews</span></figcaption>
+          </figure>
+          <figure class="card bg-white text-ink-900 p-6 flex flex-col">
+            <div class="flex gap-1 text-citrus-500" aria-label="Rated 5 out of 5 stars">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <blockquote class="mt-4 flex-1">"A wine list that rewards curiosity without making you feel quizzed. The bar lead is a gem."</blockquote>
+            <figcaption class="mt-5 text-sm font-semibold">Tomas L. <span class="block font-normal text-ink-900/60">via Yelp</span></figcaption>
+          </figure>
+        </div>
+        <p class="mt-8 text-sm text-cream-50/60">Rated 4.8 average across 300+ reviews. <a href="contact.html" class="underline hover:text-citrus-500">Come see what the fuss is about</a>.</p>
+      </div>
+    </section>
+    <!-- INTERIOR / VIBE PREVIEW STRIP -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28" aria-labelledby="vibe-title">
+      <h2 id="vibe-title" class="section-title text-charcoal-900">The room matters too</h2>
+      <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="gallery.html" class="group media rounded-2xl aspect-[3/4]">
+          <img src="images/interior-dining-room.jpg" alt="Sunlit dining room with warm wood tables" loading="lazy" />
+        </a>
+        <a href="gallery.html" class="group media rounded-2xl aspect-[3/4] mt-8">
+          <img src="images/interior-bar.jpg" alt="Bartender crafting a citrus cocktail at the marble bar" loading="lazy" />
+        </a>
+        <a href="gallery.html" class="group media rounded-2xl aspect-[3/4]">
+          <img src="images/interior-patio.jpg" alt="Patio tables under string lights at golden hour" loading="lazy" />
+        </a>
+        <a href="gallery.html" class="group media rounded-2xl aspect-[3/4] mt-8">
+          <img src="images/interior-corner-booth.jpg" alt="Corner banquette booth beside a plant-filled window" loading="lazy" />
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
+      <div class="has-glow glow-tomato relative overflow-hidden rounded-3xl bg-tomato-600 text-white px-6 py-14 text-center lg:py-20">
+        <h2 class="section-title">Hungry yet?</h2>
+        <p class="mt-3 text-lg text-white/85 measure mx-auto">Book a table tonight or let us bring the feast to you.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="contact.html#reserve" class="btn bg-white text-tomato-600 hover:bg-citrus-500 hover:text-charcoal-900">Reserve a Table</a>
+          <a href="contact.html#order" class="btn btn-on-dark">Order Online</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (shared across all pages) -->
+  <footer class="bg-charcoal-900 text-cream-50/85">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="font-display font-bold text-2xl text-white">Savor<span class="text-tomato-600">Bistro</span></p>
+        <p class="mt-3 text-sm">Seasonal cooking in a bright, easy room. Everyone is welcome at our table.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="https://instagram.com" class="grid place-items-center w-10 h-10 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="https://facebook.com" class="grid place-items-center w-10 h-10 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-white">Visit</h3>
+        <address class="mt-3 text-sm not-italic">
+          418 Meridian Ave<br />Portside, CA 90210<br />
+          <a class="mt-2 inline-flex items-center gap-1 underline hover:text-citrus-500" href="https://maps.google.com/?q=418+Meridian+Ave+Portside+CA" target="_blank" rel="noopener"><i data-lucide="map-pin" class="w-4 h-4"></i>Open in Google Maps</a><br />
+          <a class="mt-1 inline-flex items-center gap-1 underline hover:text-citrus-500" href="tel:+15551234567"><i data-lucide="phone" class="w-4 h-4"></i>(555) 123-4567</a>
+        </address>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-white">Hours</h3>
+        <dl class="mt-3 text-sm space-y-1">
+          <div class="flex justify-between gap-4"><dt>Mon-Thu</dt><dd>11:30-22:00</dd></div>
+          <div class="flex justify-between gap-4"><dt>Fri-Sat</dt><dd>11:30-23:00</dd></div>
+          <div class="flex justify-between gap-4"><dt>Sun</dt><dd>10:00-21:00</dd></div>
+        </dl>
+        <p class="mt-2 text-xs text-cream-50/60">Kitchen closes 30 min before closing. Closed Dec 25.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h3 class="font-display font-semibold text-white">Explore</h3>
+        <ul class="mt-3 text-sm space-y-2">
+          <li><a class="hover:text-citrus-500" href="menu.html">Menu</a></li>
+          <li><a class="hover:text-citrus-500" href="about.html">Our Story</a></li>
+          <li><a class="hover:text-citrus-500" href="gallery.html">Gallery</a></li>
+          <li><a class="hover:text-citrus-500" href="private-events.html">Private Events</a></li>
+          <li><a class="hover:text-citrus-500" href="contact.html">Reservations</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-xs text-cream-50/50">
+      © <span data-year>2026</span> Savor Bistro. A fictional restaurant built for a portfolio demo.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
+

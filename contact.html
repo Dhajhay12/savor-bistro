@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Reservations — Savor Bistro</title>
+  <meta name="description" content="Reserve a table at Savor Bistro, order online, find our address and hours, and get in touch." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    { 50: "#FFF8EC", 100: "#FBEED8", 200: "#F4E1C3" },
+            tomato:   { 600: "#E8384F", 700: "#C42A40", 100: "#FDE3E6" },
+            citrus:   { 500: "#FFB627", 600: "#E9A012", 100: "#FFF0D2" },
+            basil:    { 700: "#2D5A3D", 100: "#E2EFE6" },
+            charcoal: { 900: "#221A17" },
+            ink:      { 900: "#2A211D" }
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', "Trebuchet MS", "sans-serif"],
+            body: ['"Work Sans"', "Segoe UI", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream-50 text-ink-900 font-body">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header data-header class="site-header fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between" style="height: var(--nav-h);">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Savor Bistro home">
+          <span class="grid place-items-center w-10 h-10 rounded-full bg-tomato-600 text-white font-display font-extrabold text-xl" aria-hidden="true">S</span>
+          <span class="logo-text font-display font-bold text-xl tracking-tight">Savor<span class="text-tomato-600">Bistro</span></span>
+        </a>
+        <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="menu.html" class="nav-link">Menu</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="private-events.html" class="nav-link">Private Events</a>
+          <a href="contact.html" class="nav-link" aria-current="page">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="#reserve" class="btn btn-primary btn-sm hidden sm:inline-flex">Reserve a Table</a>
+          <button data-panel-open class="md:hidden grid place-items-center w-11 h-11 rounded-full border-2 border-charcoal-900/20" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div data-scrim class="mobile-scrim" aria-hidden="true"></div>
+  <aside data-panel id="mobile-panel" class="mobile-panel md:hidden" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="flex items-center justify-between mb-6">
+      <span class="font-display font-bold text-xl">Savor<span class="text-tomato-600">Bistro</span></span>
+      <button data-panel-close class="grid place-items-center w-11 h-11 rounded-full border-2 border-white/30" aria-label="Close menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col" aria-label="Mobile">
+      <a href="index.html" class="mobile-link">Home <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="menu.html" class="mobile-link">Menu <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="about.html" class="mobile-link">About <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="gallery.html" class="mobile-link">Gallery <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="private-events.html" class="mobile-link">Private Events <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="contact.html" class="mobile-link" aria-current="page">Contact <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+    </nav>
+    <a href="#reserve" class="btn btn-primary mt-8">Reserve a Table</a>
+    <p class="mt-6 text-sm text-white/70">418 Meridian Ave, Portside<br /><a href="tel:+15551234567" class="underline">(555) 123-4567</a></p>
+  </aside>
+  <main id="main">
+    <!-- PAGE INTRO -->
+    <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-32 pb-10">
+      <p class="kicker text-tomato-600 mb-3">Contact &amp; Reservations</p>
+      <h1 class="section-title text-charcoal-900">Find us, book us, feed yourself</h1>
+      <p class="mt-4 text-lg text-ink-900/80 measure">
+        Reservations open 30 days out. Walk-ins are always welcome at the bar.
+      </p>
+    </section>
+
+    <!-- VISIT + HOURS -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16" aria-labelledby="visit-title">
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="card p-6 lg:p-8">
+          <h2 id="visit-title" class="card-title text-charcoal-900 flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-5 h-5 text-tomato-600"></i>Visit
+          </h2>
+          <address class="mt-4 not-italic text-ink-900/85">
+            <strong class="font-semibold">Savor Bistro</strong><br />
+            418 Meridian Avenue<br />
+            Portside, CA 90210
+          </address>
+          <p class="mt-4 flex flex-wrap gap-4 text-sm">
+            <a class="inline-flex items-center gap-1 font-semibold text-tomato-600 hover:underline" href="https://maps.google.com/?q=418+Meridian+Ave+Portside+CA" target="_blank" rel="noopener"><i data-lucide="external-link" class="w-4 h-4"></i>Open in Google Maps</a>
+            <a class="inline-flex items-center gap-1 font-semibold text-tomato-600 hover:underline" href="tel:+15551234567"><i data-lucide="phone" class="w-4 h-4"></i>(555) 123-4567</a>
+            <a class="inline-flex items-center gap-1 font-semibold text-tomato-600 hover:underline" href="mailto:hello@savorbistro.example"><i data-lucide="mail" class="w-4 h-4"></i>hello@savorbistro.example</a>
+          </p>
+          <!-- EMBEDDED MAP: static iframe with a placeholder address.
+               Swap the src query for the real address when going live. -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-cream-200">
+            <iframe
+              title="Map showing the location of Savor Bistro (placeholder address)"
+              src="https://www.google.com/maps?q=418%20Meridian%20Avenue%20Portside%20CA&amp;output=embed"
+              width="100%" height="280" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card p-6 lg:p-8">
+          <h2 class="card-title text-charcoal-900 flex items-center gap-2">
+            <i data-lucide="clock" class="w-5 h-5 text-tomato-600"></i>Hours
+          </h2>
+          <dl class="mt-4 space-y-2 text-ink-900/85">
+            <div class="flex justify-between gap-4 py-1 border-b border-dashed border-cream-200"><dt class="font-medium">Monday - Thursday</dt><dd>11:30 am - 10:00 pm</dd></div>
+            <div class="flex justify-between gap-4 py-1 border-b border-dashed border-cream-200"><dt class="font-medium">Friday - Saturday</dt><dd>11:30 am - 11:00 pm</dd></div>
+            <div class="flex justify-between gap-4 py-1 border-b border-dashed border-cream-200"><dt class="font-medium">Sunday</dt><dd>10:00 am - 9:00 pm</dd></div>
+          </dl>
+          <div class="mt-5 flex items-start gap-3 rounded-2xl bg-tomato-100 p-4">
+            <i data-lucide="alert-circle" class="w-5 h-5 text-tomato-600 flex-none mt-0.5" aria-hidden="true"></i>
+            <p class="text-sm text-ink-900/85">
+              <strong class="font-semibold">Kitchen closes 30 minutes before listed closing time.</strong>
+              Last-call for the bar is 15 minutes before close. We are closed December 25
+              and January 1; holiday hours are posted on our social channels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- RESERVATION WIDGET -->
+    <!-- PRODUCTION NOTE: this is a styled placeholder widget. In production,
+         replace the button with the OpenTable or Resy embed script, e.g.:
+         <script src="https://www.opentable.com/widget/reservation/loader?...">  -->
+    <section id="reserve" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16" aria-labelledby="reserve-title">
+      <div class="has-glow glow-tomato relative overflow-hidden rounded-3xl bg-charcoal-900 text-cream-50 p-6 lg:p-10">
+        <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-8 items-center">
+          <div>
+            <h2 id="reserve-title" class="section-title">Reserve a Table</h2>
+            <p class="mt-3 text-cream-50/80 measure">
+              Book online in about a minute. Parties of 7 or more, please call the
+              restaurant so we can take care of you properly.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3 text-xs text-cream-50/60">
+              <span class="inline-flex items-center gap-1"><i data-lucide="check" class="w-4 h-4 text-citrus-500"></i>Instant confirmation</span>
+              <span class="inline-flex items-center gap-1"><i data-lucide="check" class="w-4 h-4 text-citrus-500"></i>Free cancellation up to 4 hours ahead</span>
+            </div>
+          </div>
+          <div class="card bg-white text-ink-900 p-5">
+            <!-- BOOKING WIDGET: links to a placeholder URL for the demo.
+                 Real OpenTable/Resy embed script would be placed here. -->
+            <a href="https://www.opentable.com/new-opentable-insider/?ref=placeholder-demo" target="_blank" rel="noopener" class="btn btn-primary w-full">
+              <i data-lucide="calendar-check" class="w-5 h-5"></i>Book now via our booking partner
+            </a>
+            <p class="mt-3 text-center text-xs text-ink-900/60">Powered by a placeholder booking service (demo)</p>
+            <p class="mt-4 text-center text-sm">
+              Prefer to talk? <a class="font-semibold text-tomato-600 underline" href="tel:+15551234567">Call (555) 123-4567</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONLINE ORDERING -->
+    <!-- PRODUCTION NOTE: buttons below are placeholders. Wire the first-party
+         button to your real ordering system and the partner buttons to your
+         live DoorDash / Uber Eats store links. No trademarked logos are used. -->
+    <section id="order" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24" aria-labelledby="order-title">
+      <h2 id="order-title" class="section-title text-charcoal-900">Order Online</h2>
+      <p class="mt-3 text-ink-900/80 measure">Pickup at the host stand or delivery to your door.</p>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="card p-6 flex flex-col">
+          <h3 class="card-title text-charcoal-900">Order Direct</h3>
+          <p class="mt-2 text-sm text-ink-900/75 flex-1">First-party pickup straight from our kitchen - the fastest way to your food and the kindest to the restaurant.</p>
+          <a href="#order" class="btn btn-primary mt-5" data-order>Add to Order</a>
+        </div>
+        <div class="card p-6 flex flex-col">
+          <h3 class="card-title text-charcoal-900">Delivery Partner A</h3>
+          <p class="mt-2 text-sm text-ink-900/75 flex-1">Live tracking and contactless drop-off through our first delivery partner (placeholder link).</p>
+          <a href="https://www.doordash.com" target="_blank" rel="noopener" class="btn btn-ghost mt-5">Order via partner A</a>
+        </div>
+        <div class="card p-6 flex flex-col">
+          <h3 class="card-title text-charcoal-900">Delivery Partner B</h3>
+          <p class="mt-2 text-sm text-ink-900/75 flex-1">Same menu, second network - handy when partner A is busy (placeholder link).</p>
+          <a href="https://www.ubereats.com" target="_blank" rel="noopener" class="btn btn-ghost mt-5">Order via partner B</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM (validated client-side; success shows a styled confirmation) -->
+    <section class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pb-24" aria-labelledby="contact-form-title">
+      <div class="card p-6 lg:p-8">
+        <h2 id="contact-form-title" class="card-title text-charcoal-900">Drop us a line</h2>
+        <p class="mt-2 text-sm text-ink-900/75">Questions, feedback, or a lost jacket - this reaches the whole management team.</p>
+        <form data-validate class="mt-6" novalidate>
+          <div class="form-fields space-y-5">
+            <div data-field>
+              <label for="ct-name" class="field-label">Name <span class="text-tomato-600" aria-hidden="true">*</span></label>
+              <input class="field" id="ct-name" name="name" type="text" autocomplete="name" required data-error="Please tell us your name." />
+              <p class="field-error"><i data-lucide="alert-circle" aria-hidden="true"></i><span></span></p>
+            </div>
+            <div data-field>
+              <label for="ct-email" class="field-label">Email <span class="text-tomato-600" aria-hidden="true">*</span></label>
+              <input class="field" id="ct-email" name="email" type="email" autocomplete="email" required data-error="Please enter a valid email address." />
+              <p class="field-error"><i data-lucide="alert-circle" aria-hidden="true"></i><span></span></p>
+            </div>
+            <div data-field>
+              <label for="ct-message" class="field-label">Message <span class="text-tomato-600" aria-hidden="true">*</span></label>
+              <textarea class="field" id="ct-message" name="message" rows="4" required data-error="Please include a short message."></textarea>
+              <p class="field-error"><i data-lucide="alert-circle" aria-hidden="true"></i><span></span></p>
+            </div>
+            <button type="submit" class="btn btn-primary w-full sm:w-auto">Send Message</button>
+          </div>
+          <div class="form-status" role="status">
+            <div class="rounded-3xl bg-basil-100 border border-basil-700/30 p-8 text-center">
+              <svg class="check-draw mx-auto text-basil-700" width="72" height="72" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+                <circle cx="26" cy="26" r="24" stroke="currentColor" stroke-width="3" />
+                <path d="M15 27l8 8 15-17" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <h3 data-success-heading class="mt-5 card-title text-basil-700">Message sent</h3>
+              <p class="mt-2 text-ink-900/80">Thanks for reaching out - we read everything and reply quickly.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- SOCIAL LINKS -->
+  <section class="bg-charcoal-900 text-cream-50 py-14" aria-labelledby="social-title">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <h2 id="social-title" class="section-title text-3xl">Follow the flavor</h2>
+      <div class="flex gap-4">
+        <a href="https://instagram.com" class="grid place-items-center w-12 h-12 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="https://facebook.com" class="grid place-items-center w-12 h-12 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-charcoal-900 text-cream-50/85 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="font-display font-bold text-2xl text-white">Savor<span class="text-tomato-600">Bistro</span></p>
+        <p class="mt-3 text-sm">Seasonal cooking in a bright, easy room. Everyone is welcome at our table.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="https://instagram.com" class="grid place-items-center w-10 h-10 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="https://facebook.com" class="grid place-items-center w-10 h-10 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-white">Visit</h3>
+        <address class="mt-3 text-sm not-italic">
+          418 Meridian Ave<br />Portside, CA 90210<br />
+          <a class="mt-2 inline-flex items-center gap-1 underline hover:text-citrus-500" href="https://maps.google.com/?q=418+Meridian+Ave+Portside+CA" target="_blank" rel="noopener"><i data-lucide="map-pin" class="w-4 h-4"></i>Open in Google Maps</a><br />
+          <a class="mt-1 inline-flex items-center gap-1 underline hover:text-citrus-500" href="tel:+15551234567"><i data-lucide="phone" class="w-4 h-4"></i>(555) 123-4567</a>
+        </address>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-white">Hours</h3>
+        <dl class="mt-3 text-sm space-y-1">
+          <div class="flex justify-between gap-4"><dt>Mon-Thu</dt><dd>11:30-22:00</dd></div>
+          <div class="flex justify-between gap-4"><dt>Fri-Sat</dt><dd>11:30-23:00</dd></div>
+          <div class="flex justify-between gap-4"><dt>Sun</dt><dd>10:00-21:00</dd></div>
+        </dl>
+        <p class="mt-2 text-xs text-cream-50/60">Kitchen closes 30 min before closing. Closed Dec 25.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h3 class="font-display font-semibold text-white">Explore</h3>
+        <ul class="mt-3 text-sm space-y-2">
+          <li><a class="hover:text-citrus-500" href="menu.html">Menu</a></li>
+          <li><a class="hover:text-citrus-500" href="about.html">Our Story</a></li>
+          <li><a class="hover:text-citrus-500" href="gallery.html">Gallery</a></li>
+          <li><a class="hover:text-citrus-500" href="private-events.html">Private Events</a></li>
+          <li><a class="hover:text-citrus-500" href="contact.html">Reservations</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-xs text-cream-50/50">
+      © <span data-year>2026</span> Savor Bistro. A fictional restaurant built for a portfolio demo.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
+

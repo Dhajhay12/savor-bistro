@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story — Savor Bistro</title>
+  <meta name="description" content="How Savor Bistro started, the people behind the pass, and the growers we cook for. Meet the team." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    { 50: "#FFF8EC", 100: "#FBEED8", 200: "#F4E1C3" },
+            tomato:   { 600: "#E8384F", 700: "#C42A40", 100: "#FDE3E6" },
+            citrus:   { 500: "#FFB627", 600: "#E9A012", 100: "#FFF0D2" },
+            basil:    { 700: "#2D5A3D", 100: "#E2EFE6" },
+            charcoal: { 900: "#221A17" },
+            ink:      { 900: "#2A211D" }
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', "Trebuchet MS", "sans-serif"],
+            body: ['"Work Sans"', "Segoe UI", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream-50 text-ink-900 font-body">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header data-header class="site-header fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between" style="height: var(--nav-h);">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Savor Bistro home">
+          <span class="grid place-items-center w-10 h-10 rounded-full bg-tomato-600 text-white font-display font-extrabold text-xl" aria-hidden="true">S</span>
+          <span class="logo-text font-display font-bold text-xl tracking-tight">Savor<span class="text-tomato-600">Bistro</span></span>
+        </a>
+        <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="menu.html" class="nav-link">Menu</a>
+          <a href="about.html" class="nav-link" aria-current="page">About</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="private-events.html" class="nav-link">Private Events</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="contact.html#reserve" class="btn btn-primary btn-sm hidden sm:inline-flex">Reserve a Table</a>
+          <button data-panel-open class="md:hidden grid place-items-center w-11 h-11 rounded-full border-2 border-charcoal-900/20" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div data-scrim class="mobile-scrim" aria-hidden="true"></div>
+  <aside data-panel id="mobile-panel" class="mobile-panel md:hidden" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="flex items-center justify-between mb-6">
+      <span class="font-display font-bold text-xl">Savor<span class="text-tomato-600">Bistro</span></span>
+      <button data-panel-close class="grid place-items-center w-11 h-11 rounded-full border-2 border-white/30" aria-label="Close menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col" aria-label="Mobile">
+      <a href="index.html" class="mobile-link">Home <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="menu.html" class="mobile-link">Menu <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="about.html" class="mobile-link" aria-current="page">About <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="gallery.html" class="mobile-link">Gallery <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="private-events.html" class="mobile-link">Private Events <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="contact.html" class="mobile-link">Contact <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+    </nav>
+    <a href="contact.html#reserve" class="btn btn-primary mt-8">Reserve a Table</a>
+    <p class="mt-6 text-sm text-white/70">418 Meridian Ave, Portside<br /><a href="tel:+15551234567" class="underline">(555) 123-4567</a></p>
+  </aside>
+  <main id="main">
+    <!-- PAGE HEADER + FOUNDING STORY -->
+    <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-32 pb-12">
+      <p class="kicker text-tomato-600 mb-3">Our Story</p>
+      <h1 class="section-title text-charcoal-900">A small kitchen with big opinions</h1>
+      <div class="mt-8 space-y-5 text-lg text-ink-900/85 measure">
+        <p>
+          Savor Bistro opened its doors in 2014 with twelve tables, one wood-fired
+          hearth, and a stubborn belief: that a neighborhood bistro can cook at the
+          level of a destination restaurant without losing its sense of humor. Chef
+          Elena Marchetti came up through Marseille kitchens and a decade of farmers
+          market stalls before signing the lease on a former print shop on Meridian
+          Avenue.
+        </p>
+        <p>
+          The cooking is seasonal to a fault. Ninety percent of our produce travels
+          fewer than 150 miles - heirloom tomatoes and basil from Vargas Family Farm
+          in Hollister, mushrooms foraged from the coastal range, olive oil pressed
+          for us each November. The saffron in our risotto is the one deliberate
+          exception, flown in from a family cooperative in Abruzzo that Elena has
+          worked with since her apprenticeship.
+        </p>
+        <p>
+          We refresh the menu the moment the market shifts, keep a natural-leaning
+          wine list built around growers we have actually visited, and treat dining
+          room regulars and first-timers with the same warmth. That is the whole
+          philosophy: buy beautifully, cook precisely, be generous.
+        </p>
+      </div>
+    </section>
+
+    <!-- STORY IMAGERY: kitchen + dining room -->
+    <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-20" aria-label="Inside the restaurant">
+      <div class="grid sm:grid-cols-2 gap-4 lg:gap-6">
+        <figure class="group media rounded-3xl aspect-[4/3] shadow-lift">
+          <img src="images/interior-kitchen.jpg" alt="Chefs at the pass in the open kitchen during service" loading="lazy" />
+          <figcaption class="sr-only">The open kitchen at full service</figcaption>
+        </figure>
+        <figure class="group media rounded-3xl aspect-[4/3] shadow-lift">
+          <img src="images/interior-dining-room.jpg" alt="Sunlit dining room with warm wood tables and plants" loading="lazy" />
+          <figcaption class="sr-only">The dining room on a bright afternoon</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- INGREDIENTS BAND -->
+    <section class="bg-charcoal-900 text-cream-50 py-16 lg:py-20" aria-labelledby="ingredients-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 id="ingredients-title" class="section-title">Sourcing we can name</h2>
+          <p class="mt-4 text-cream-50/80 measure">
+            We print our growers on the menu because they earn it. Ask your server
+            where anything on the plate came from - someone here will know.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm">
+            <li class="flex items-center gap-3"><i data-lucide="carrot" class="w-5 h-5 text-citrus-500"></i>Vargas Family Farm - tomatoes, basil, squash (Hollister, CA)</li>
+            <li class="flex items-center gap-3"><i data-lucide="fish" class="w-5 h-5 text-citrus-500"></i>Meridian Fish Co. - day-boat seafood, landed daily</li>
+            <li class="flex items-center gap-3"><i data-lucide="wheat" class="w-5 h-5 text-citrus-500"></i>Stone &amp; Hearth Mill - flours for every loaf and pasta</li>
+            <li class="flex items-center gap-3"><i data-lucide="grape" class="w-5 h-5 text-citrus-500"></i>Abruzzo Saffron Cooperative - the good stuff since 2014</li>
+          </ul>
+        </div>
+        <figure class="group media rounded-3xl aspect-[16/10] shadow-lift">
+          <img src="images/ingredients-vegetables.jpg" alt="Colorful fresh vegetables arranged on a market table" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+    <!-- TEAM -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24" aria-labelledby="team-title">
+      <h2 id="team-title" class="section-title text-charcoal-900">The people at the pass</h2>
+      <p class="mt-3 text-lg text-ink-900/80 measure">Four of the faces you will meet on any given night.</p>
+      <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="group card shadow-lift">
+          <div class="media aspect-[4/5]">
+            <img src="images/staff-executive-chef.jpg" alt="Portrait of Executive Chef Elena Marchetti in the kitchen" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <h3 class="card-title text-charcoal-900">Elena Marchetti</h3>
+            <p class="text-sm font-semibold text-tomato-600">Executive Chef &amp; Co-founder</p>
+            <p class="mt-2 text-sm text-ink-900/75">Trained in Marseille; still tastes every sauce before service.</p>
+          </div>
+        </article>
+        <article class="group card shadow-lift">
+          <div class="media aspect-[4/5]">
+            <img src="images/staff-sous-chef.jpg" alt="Portrait of Sous Chef Marcus Webb" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <h3 class="card-title text-charcoal-900">Marcus Webb</h3>
+            <p class="text-sm font-semibold text-tomato-600">Sous Chef</p>
+            <p class="mt-2 text-sm text-ink-900/75">Runs the hearth station and our Saturday farmers market runs.</p>
+          </div>
+        </article>
+        <article class="group card shadow-lift">
+          <div class="media aspect-[4/5]">
+            <img src="images/staff-general-manager.jpg" alt="Portrait of General Manager Dana Okafor" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <h3 class="card-title text-charcoal-900">Dana Okafor</h3>
+            <p class="text-sm font-semibold text-tomato-600">General Manager</p>
+            <p class="mt-2 text-sm text-ink-900/75">Keeps the room calm, the books honest, and the regulars remembered.</p>
+          </div>
+        </article>
+        <article class="group card shadow-lift">
+          <div class="media aspect-[4/5]">
+            <img src="images/staff-bar-lead.jpg" alt="Portrait of Bar Lead Sofia Reyes" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <h3 class="card-title text-charcoal-900">Sofia Reyes</h3>
+            <p class="text-sm font-semibold text-tomato-600">Bar Lead &amp; Sommelier</p>
+            <p class="mt-2 text-sm text-ink-900/75">Built a wine list that rewards curiosity; shakes a mean spritz.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT CTA -->
+    <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-24 text-center">
+      <div class="has-glow glow-citrus relative rounded-3xl bg-citrus-500 text-charcoal-900 px-6 py-14">
+        <h2 class="section-title">Come say hello</h2>
+        <p class="mt-3 text-lg text-charcoal-900/80 measure mx-auto">The best way to understand the restaurant is to taste it.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="contact.html#reserve" class="btn btn-primary">Reserve a Table</a>
+          <a href="menu.html" class="btn btn-ghost">See the Menu</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-charcoal-900 text-cream-50/85">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="font-display font-bold text-2xl text-white">Savor<span class="text-tomato-600">Bistro</span></p>
+        <p class="mt-3 text-sm">Seasonal cooking in a bright, easy room. Everyone is welcome at our table.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="https://instagram.com" class="grid place-items-center w-10 h-10 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="https://facebook.com" class="grid place-items-center w-10 h-10 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-white">Visit</h3>
+        <address class="mt-3 text-sm not-italic">
+          418 Meridian Ave<br />Portside, CA 90210<br />
+          <a class="mt-2 inline-flex items-center gap-1 underline hover:text-citrus-500" href="https://maps.google.com/?q=418+Meridian+Ave+Portside+CA" target="_blank" rel="noopener"><i data-lucide="map-pin" class="w-4 h-4"></i>Open in Google Maps</a><br />
+          <a class="mt-1 inline-flex items-center gap-1 underline hover:text-citrus-500" href="tel:+15551234567"><i data-lucide="phone" class="w-4 h-4"></i>(555) 123-4567</a>
+        </address>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-white">Hours</h3>
+        <dl class="mt-3 text-sm space-y-1">
+          <div class="flex justify-between gap-4"><dt>Mon-Thu</dt><dd>11:30-22:00</dd></div>
+          <div class="flex justify-between gap-4"><dt>Fri-Sat</dt><dd>11:30-23:00</dd></div>
+          <div class="flex justify-between gap-4"><dt>Sun</dt><dd>10:00-21:00</dd></div>
+        </dl>
+        <p class="mt-2 text-xs text-cream-50/60">Kitchen closes 30 min before closing. Closed Dec 25.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h3 class="font-display font-semibold text-white">Explore</h3>
+        <ul class="mt-3 text-sm space-y-2">
+          <li><a class="hover:text-citrus-500" href="menu.html">Menu</a></li>
+          <li><a class="hover:text-citrus-500" href="about.html">Our Story</a></li>
+          <li><a class="hover:text-citrus-500" href="gallery.html">Gallery</a></li>
+          <li><a class="hover:text-citrus-500" href="private-events.html">Private Events</a></li>
+          <li><a class="hover:text-citrus-500" href="contact.html">Reservations</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-xs text-cream-50/50">
+      © <span data-year>2026</span> Savor Bistro. A fictional restaurant built for a portfolio demo.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

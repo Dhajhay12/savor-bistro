@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Savor Bistro</title>
+  <meta name="description" content="The full Savor Bistro menu: starters, mains, seafood, desserts and drinks, with dietary and allergen badges on every item." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:    { 50: "#FFF8EC", 100: "#FBEED8", 200: "#F4E1C3" },
+            tomato:   { 600: "#E8384F", 700: "#C42A40", 100: "#FDE3E6" },
+            citrus:   { 500: "#FFB627", 600: "#E9A012", 100: "#FFF0D2" },
+            basil:    { 700: "#2D5A3D", 100: "#E2EFE6" },
+            charcoal: { 900: "#221A17" },
+            ink:      { 900: "#2A211D" }
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', "Trebuchet MS", "sans-serif"],
+            body: ['"Work Sans"', "Segoe UI", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream-50 text-ink-900 font-body">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header data-header class="site-header fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between" style="height: var(--nav-h);">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Savor Bistro home">
+          <span class="grid place-items-center w-10 h-10 rounded-full bg-tomato-600 text-white font-display font-extrabold text-xl" aria-hidden="true">S</span>
+          <span class="logo-text font-display font-bold text-xl tracking-tight">Savor<span class="text-tomato-600">Bistro</span></span>
+        </a>
+        <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="menu.html" class="nav-link" aria-current="page">Menu</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="private-events.html" class="nav-link">Private Events</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="contact.html#reserve" class="btn btn-primary btn-sm hidden sm:inline-flex">Reserve a Table</a>
+          <button data-panel-open class="md:hidden grid place-items-center w-11 h-11 rounded-full border-2 border-charcoal-900/20" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div data-scrim class="mobile-scrim" aria-hidden="true"></div>
+  <aside data-panel id="mobile-panel" class="mobile-panel md:hidden" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="flex items-center justify-between mb-6">
+      <span class="font-display font-bold text-xl">Savor<span class="text-tomato-600">Bistro</span></span>
+      <button data-panel-close class="grid place-items-center w-11 h-11 rounded-full border-2 border-white/30" aria-label="Close menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col" aria-label="Mobile">
+      <a href="index.html" class="mobile-link">Home <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="menu.html" class="mobile-link" aria-current="page">Menu <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="about.html" class="mobile-link">About <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="gallery.html" class="mobile-link">Gallery <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="private-events.html" class="mobile-link">Private Events <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+      <a href="contact.html" class="mobile-link">Contact <i data-lucide="chevron-right" class="w-4 h-4 opacity-60"></i></a>
+    </nav>
+    <a href="contact.html#reserve" class="btn btn-primary mt-8">Reserve a Table</a>
+    <p class="mt-6 text-sm text-white/70">418 Meridian Ave, Portside<br /><a href="tel:+15551234567" class="underline">(555) 123-4567</a></p>
+  </aside>
+  <main id="main">
+    <!-- PAGE INTRO + dietary filter pills -->
+    <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-32 pb-10">
+      <p class="kicker text-tomato-600 mb-3">The Menu</p>
+      <h1 class="section-title text-charcoal-900">Cooked from scratch, priced honestly</h1>
+      <p class="mt-4 text-lg text-ink-900/80 measure">
+        Everything is prepared in our open kitchen. Vegetarian, vegan, gluten-free and
+        nut-free items are marked; tell your server about any allergy and the kitchen
+        will take care of you.
+      </p>
+      <!-- PRICING TRANSPARENCY NOTE -->
+      <div class="mt-6 flex items-start gap-3 rounded-2xl bg-citrus-100 border border-citrus-500/40 p-4">
+        <i data-lucide="info" class="w-5 h-5 text-citrus-600 flex-none mt-0.5" aria-hidden="true"></i>
+        <p class="text-sm text-ink-900/85">
+          <strong class="font-semibold">Prices and availability current as of September 17, 2026</strong>
+          - please note seasonal items may vary.
+        </p>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-3" role="group" aria-label="Filter menu by dietary preference">
+        <button class="pill" data-filter="all" aria-pressed="true"><i data-lucide="utensils" class="w-4 h-4"></i>All items</button>
+        <button class="pill" data-filter="veg" aria-pressed="false"><i data-lucide="leaf" class="w-4 h-4"></i>Vegetarian</button>
+        <button class="pill" data-filter="vegan" aria-pressed="false"><i data-lucide="sprout" class="w-4 h-4"></i>Vegan</button>
+        <button class="pill" data-filter="gf" aria-pressed="false"><i data-lucide="wheat-off" class="w-4 h-4"></i>Gluten-free</button>
+        <button class="pill" data-filter="nutfree" aria-pressed="false"><i data-lucide="shield-check" class="w-4 h-4"></i>Nut-free</button>
+      </div>
+    </section>
+
+    <!-- STARTERS -->
+    <section id="starters" class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16" aria-labelledby="starters-title">
+      <h2 id="starters-title" class="section-title text-tomato-600">Starters</h2>
+      <div class="mt-6">
+        <div class="menu-row py-6 sm:py-7" data-tags="veg gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/dish-burrata.jpg" alt="" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Heirloom Burrata</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$18</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Creamy burrata, peak-season heirloom tomatoes, torn basil, saba, flaked sea salt.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/dish-charred-octopus.jpg" alt="" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Charred Octopus</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$29</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Grilled over vine cuttings, smoked paprika oil, fingerling potatoes, pickled fresno chilies.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="veg nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-artichokes.jpg" alt="Fried baby artichokes with lemon aioli" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Crispy Artichokes</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$14</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Fried baby artichokes, lemon aioli, shaved pecorino, chili honey.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="veg nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-soup.jpg" alt="Bowl of vegetable soup with basil oil" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Market Vegetable Soup</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$12</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Whatever is best at the market that morning, finished with basil oil.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="veg nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-sourdough.jpg" alt="Sliced sourdough loaf with whipped butter" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Sourdough &amp; Whipped Butter</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$8</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">House loaf baked every four hours, cultured whipped butter, smoked salt.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- MAINS -->
+    <section id="mains" class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16" aria-labelledby="mains-title">
+      <h2 id="mains-title" class="section-title text-tomato-600">Mains</h2>
+      <div class="mt-6">
+        <div class="menu-row py-6 sm:py-7" data-tags="gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/dish-porchetta.jpg" alt="" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Slow-Roast Porchetta</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$34</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Twelve hours with fennel, rosemary and garlic, charred broccolini, bright salsa verde.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="veg gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/dish-saffron-risotto.jpg" alt="" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Saffron Risotto</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$26</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Carnaroli rice stirred to order, saffron from Abruzzo, preserved lemon, pecorino.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-eggplant.jpg" alt="Baked eggplant parmesan with tomato and cheese" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Charred Eggplant Parmigiana</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$24</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Smoky eggplant, san marzano tomato, fior di latte, basil, olive crumb.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="vegan gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-cauliflower.jpg" alt="Whole roasted cauliflower with lemon" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Harissa Roast Cauliflower</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$22</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Whole-roasted with rose harissa, golden raisins, herb couscous, almond-free chermoula.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-vegan"><i data-lucide="sprout"></i>Vegan</span>
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-chicken.jpg" alt="Roast chicken plate with potatoes" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Half Chicken al Mattone</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$28</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Brick-pressed chicken, charred lemon, salsa verde, crispy potatoes.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SEAFOOD -->
+    <section id="seafood" class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16" aria-labelledby="seafood-title">
+      <h2 id="seafood-title" class="section-title text-tomato-600">Seafood</h2>
+      <div class="mt-6">
+        <div class="menu-row py-6 sm:py-7" data-tags="gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-scallops.jpg" alt="Seared scallops on a plate" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Day-Boat Scallops</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$38</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Seared scallops, sweet corn purée, charred leek, brown butter, chive oil.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-salmon.jpg" alt="Glazed salmon fillet with vegetables" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Miso-Glazed Salmon</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$32</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Faroe Island salmon, white miso glaze, snap peas, sesame jade rice.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="veg nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-vongole.jpg" alt="Linguine with clams in white wine" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Linguine alle Vongole</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$30</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Manila clams, white wine, garlic confit, chili, parsley, grilled bread.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/gallery-raw-bar.jpg" alt="" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Raw Bar Selection</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$24</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Half dozen oysters and clams, champagne mignonette, fresh horseradish, lemon.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- DESSERTS (two items held back behind the seasonal reveal control) -->
+    <section id="desserts" class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16" aria-labelledby="desserts-title">
+      <h2 id="desserts-title" class="section-title text-tomato-600">Desserts</h2>
+      <div class="mt-6 menu-deferred">
+        <div class="menu-row py-6 sm:py-7" data-tags="veg nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-olive-cake.jpg" alt="Slice of citrus olive oil cake" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Olive Oil Cake</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$12</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Citrus olive oil cake, mascarpone cream, macerated berries, basil sugar.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="veg gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-budino.jpg" alt="Dark chocolate pudding dessert" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Dark Chocolate Budino</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$13</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Warm chocolate custard, crisp crumble, olive oil, sea salt.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+                <span class="badge badge-nutfree"><i data-lucide="shield-check"></i>Nut-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-deferred data-tags="veg">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-semifreddo.jpg" alt="Pistachio dessert with cherry mostarda" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Pistachio Semifreddo</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$14</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Sicilian pistachio, cherry mostarda, cocoa nib tuile.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-deferred data-tags="veg gf">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-poached-pear.jpg" alt="Poached pear with gelato and spiced honey" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Poached Pear</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$11</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Red wine poached pear, vanilla gelato, spiced honey.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-veg"><i data-lucide="leaf"></i>Vegetarian</span>
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-reveal-wrap class="mt-6">
+        <button class="btn btn-ghost btn-sm" data-reveal>
+          <i data-lucide="chef-hat" class="w-4 h-4"></i> Show this season's items
+        </button>
+      </div>
+    </section>
+    <!-- DRINKS -->
+    <section id="drinks" class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-24" aria-labelledby="drinks-title">
+      <h2 id="drinks-title" class="section-title text-tomato-600">Drinks</h2>
+      <div class="mt-6">
+        <div class="menu-row py-6 sm:py-7" data-tags="vegan gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/detail-cocktail-citrus.jpg" alt="" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Garden Spritz</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$14</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Basil gin, house citrus cordial, prosecco, soda.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-vegan"><i data-lucide="sprout"></i>Vegan</span>
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="vegan gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-negroni.jpg" alt="Smoked negroni cocktail with orange peel" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Smoked Negroni</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$15</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Mezcal, campari, sweet vermouth, orange oil, smoked to order.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-vegan"><i data-lucide="sprout"></i>Vegan</span>
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="vegan gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-berry-shrub.jpg" alt="Bright strawberry cocktail with mint" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Zero-Proof Berry Shrub</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">$9</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">Strawberry shrub, mint, lime, soda. No alcohol, all bright.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-vegan"><i data-lucide="sprout"></i>Vegan</span>
+                <span class="badge badge-gf"><i data-lucide="wheat-off"></i>Gluten-free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-row py-6 sm:py-7" data-tags="vegan gf nutfree">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <img src="images/menu-wine-glass.jpg" alt="Glass of red wine" class="menu-thumb" loading="lazy" width="160" height="160" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline gap-3">
+                <h3 class="font-display font-semibold text-lg text-charcoal-900">Wines by the Glass</h3>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="price">from $12</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-900/75 measure">A rotating list of 40 bottles; ask for tonight's open bottles.</p>
+              <div class="mt-2 flex flex-wrap gap-2">
+                <span class="badge badge-wine"><i data-lucide="wine"></i>Ask the bar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-charcoal-900 text-cream-50/85">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="font-display font-bold text-2xl text-white">Savor<span class="text-tomato-600">Bistro</span></p>
+        <p class="mt-3 text-sm">Seasonal cooking in a bright, easy room. Everyone is welcome at our table.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="https://instagram.com" class="grid place-items-center w-10 h-10 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="https://facebook.com" class="grid place-items-center w-10 h-10 rounded-full border border-white/25 hover:border-citrus-500 hover:text-citrus-500" aria-label="Savor Bistro on Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-white">Visit</h3>
+        <address class="mt-3 text-sm not-italic">
+          418 Meridian Ave<br />Portside, CA 90210<br />
+          <a class="mt-2 inline-flex items-center gap-1 underline hover:text-citrus-500" href="https://maps.google.com/?q=418+Meridian+Ave+Portside+CA" target="_blank" rel="noopener"><i data-lucide="map-pin" class="w-4 h-4"></i>Open in Google Maps</a><br />
+          <a class="mt-1 inline-flex items-center gap-1 underline hover:text-citrus-500" href="tel:+15551234567"><i data-lucide="phone" class="w-4 h-4"></i>(555) 123-4567</a>
+        </address>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-white">Hours</h3>
+        <dl class="mt-3 text-sm space-y-1">
+          <div class="flex justify-between gap-4"><dt>Mon-Thu</dt><dd>11:30-22:00</dd></div>
+          <div class="flex justify-between gap-4"><dt>Fri-Sat</dt><dd>11:30-23:00</dd></div>
+          <div class="flex justify-between gap-4"><dt>Sun</dt><dd>10:00-21:00</dd></div>
+        </dl>
+        <p class="mt-2 text-xs text-cream-50/60">Kitchen closes 30 min before closing. Closed Dec 25.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h3 class="font-display font-semibold text-white">Explore</h3>
+        <ul class="mt-3 text-sm space-y-2">
+          <li><a class="hover:text-citrus-500" href="menu.html">Menu</a></li>
+          <li><a class="hover:text-citrus-500" href="about.html">Our Story</a></li>
+          <li><a class="hover:text-citrus-500" href="gallery.html">Gallery</a></li>
+          <li><a class="hover:text-citrus-500" href="private-events.html">Private Events</a></li>
+          <li><a class="hover:text-citrus-500" href="contact.html">Reservations</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-xs text-cream-50/50">
+      © <span data-year>2026</span> Savor Bistro. A fictional restaurant built for a portfolio demo.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
