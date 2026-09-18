@@ -206,6 +206,26 @@ h1, h2, h3, h4, .font-display {
    cream once the header turns charcoal. "Bistro" stays tomato-600 in both. */
 .logo-text { color: var(--ink-900); transition: color 200ms ease; }
 .site-header.is-stuck .logo-text { color: var(--cream-50); }
+/* Hamburger: Lucide icons inherit text color, so the button needs explicit
+   colors per nav state (dark ink on cream pre-scroll, light on charcoal). */
+.nav-burger {
+  color: var(--ink-900);
+  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
+}
+.site-header.is-stuck .nav-burger { color: #fff; border-color: rgba(255, 255, 255, 0.4); }
+/* Home hero: pre-scroll the nav floats over the food photo, so the wordmark
+   and hamburger switch to light with a soft dark halo/backdrop for legibility
+   over busy imagery. Scoped to body.has-hero-nav - other pages sit over the
+   cream background pre-scroll and keep their dark ink. */
+body.has-hero-nav .site-header:not(.is-stuck) .logo-text {
+  color: #fff;
+  text-shadow: 0 1px 10px rgba(34, 26, 23, 0.65), 0 0 3px rgba(34, 26, 23, 0.5);
+}
+body.has-hero-nav .site-header:not(.is-stuck) .nav-burger {
+  color: #fff;
+  background: rgba(34, 26, 23, 0.38);
+  border-color: rgba(255, 255, 255, 0.5);
+}
 .nav-link { position: relative; font-weight: 500; color: var(--ink-900); transition: color 200ms ease; }
 .nav-link::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 3px; border-radius: 999px;
