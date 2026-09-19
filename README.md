@@ -32,7 +32,17 @@ about.html             founding story, sourcing, team
 gallery.html           masonry grid + keyboard-accessible lightbox
 private-events.html    private dining, catering packages, validated inquiry form
 contact.html           address, hours, map, reservation widget, online ordering
+tools/overflow-audit.cjs  headless-browser check: renders every page at 375/1440px and
+                          reports any element wider than the viewport (run `node tools/overflow-audit.cjs`)
 ```
+
+## Responsive / overflow safeguards
+
+Global baselines live in `css/styles.css`: `overflow-x: hidden` on both `html`
+and `body`, and `max-width: 100%` on `img`/`video`/`iframe`. Decorative glow
+effects (`.has-glow::before/::after`) are clipped inside their own cards via
+`overflow: hidden`, so they can never push the page wider than the viewport.
+Re-run the audit tool after layout changes to catch regressions.
 
 ## Design tokens
 

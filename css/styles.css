@@ -38,7 +38,11 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-h) + 16px); /* sticky nav never covers a jump target */
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden; /* belt: the viewport can never scroll sideways */
 }
+
+/* Media baseline: nothing image-like may push the page wider than its box. */
+img, video, iframe { max-width: 100%; }
 
 body {
   background-color: var(--cream-50);
@@ -339,7 +343,7 @@ body.nav-open { overflow: hidden; }
   background: radial-gradient(60% 60% at 60% 50%, rgba(232, 56, 79, .40), rgba(232, 56, 79, 0) 70%);
   filter: blur(14px); pointer-events: none;
 }
-.has-glow { position: relative; z-index: 0; }
+.has-glow { position: relative; z-index: 0; overflow: hidden; } /* clip the decorative glow at the card edge */
 
 /* 5h. Order-portal "added" state (pairs with .tick-pop in js/main.js) */
 .is-added { border-color: var(--basil-700) !important; color: var(--basil-700) !important; background: var(--basil-100) !important; }
